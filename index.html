@@ -12,13 +12,12 @@
     <style>
         /* --- Custom CSS --- */
         :root {
-            /* Updated Primary Color to match requested page color */
-            --primary-color: #CA2CD3; 
+            --primary-color: #5F2084; /* اللون الجديد المطلوب */
+            --primary-dark: #461763;
             --secondary-color: #f8f9fa;
             --text-dark: #2c3e50;
             --text-light: #6c757d;
-            /* Updated Hero Gradient to blend with the new color */
-            --accent-bg: linear-gradient(135deg, #CA2CD3 0%, #e066e6 100%);
+            --accent-bg: linear-gradient(135deg, #5F2084 0%, #3a1352 100%);
         }
 
         body {
@@ -26,14 +25,13 @@
             color: var(--text-dark);
             overflow-x: hidden;
             line-height: 1.6;
-            /* Applied the requested page color */
-            background-color: #CA2CD3; 
+            background-color: #ffffff;
         }
 
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 70px; 
+            scroll-padding-top: 70px;
         }
 
         /* Navigation */
@@ -65,29 +63,57 @@
             display: flex;
             align-items: center;
             background: var(--accent-bg);
-            padding-top: 100px; 
+            padding-top: 100px;
             padding-bottom: 60px;
-            color: white; /* Changed text to white for better contrast on purple */
+            color: white;
         }
 
-        #hero .hero-title, #hero .hero-subtitle, #hero .hero-tagline {
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
             color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-primary {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
         }
 
         .hero-image-wrapper {
             position: relative;
             padding: 10px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
         /* General Sections */
         section {
             padding: 100px 0;
-            /* Adding a slight white background to sections to keep text readable 
-               while keeping the page background the requested color */
-            background-color: rgba(255, 255, 255, 0.9); 
         }
 
         .section-title {
@@ -115,22 +141,11 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
-            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: #a322ab; /* Darker shade for hover */
-            border-color: #a322ab;
         }
 
         /* Skills */
@@ -153,18 +168,49 @@
         }
 
         /* Tools */
+        .tool-badge {
+            font-size: 1rem;
+            padding: 12px 24px;
+            margin: 8px;
+            border-radius: 50px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            color: var(--text-dark);
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
         .tool-badge:hover {
             background-color: var(--primary-color);
             color: white;
             border-color: var(--primary-color);
         }
 
-        /* Contact & Footer */
+        /* Contact Section */
         #contact {
-            background-color: #212529;
+            background-color: #1a0924; /* أغمق من اللون الأساسي */
             color: white;
         }
 
+        .contact-btn {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
         footer {
             background-color: #000;
             color: #7f8c8d;
@@ -212,7 +258,8 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
                     <div class="hero-image-wrapper">
-                        <img src="https://placehold.co/800x600/ffffff/CA2CD3?text=Data+Science" alt="Data Science World" class="img-fluid rounded-4">
+                        <!-- صورة توضيحية بلون متناسق -->
+                        <img src="https://placehold.co/800x600/ffffff/5F2084?text=Data+Science+Expert" alt="Data Science" class="img-fluid rounded-4">
                     </div>
                 </div>
             </div>
@@ -226,39 +273,91 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <p class="lead text-muted">
-                        I am a graduate of Data Science and Artificial Intelligence with a Very Good GPA.
-                        I work on collecting datasets, analyzing them, cleaning and preparing data for modeling, and building machine learning models
-                        with high accuracy and performance.
+                        I am a graduate of Data Science and Artificial Intelligence. I specialize in collecting, analyzing, and cleaning datasets to build high-performance machine learning models that support data-driven decisions.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Remaining sections (Skills, Services, Projects, Tools, Contact) follow the same layout... -->
-    <!-- (Sections now have a semi-transparent white background to ensure content is readable against the #CA2CD3 page background) -->
+    <!-- Skills Section -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h3 class="skill-category">Technical</h3>
+                        <ul class="list-unstyled skill-list">
+                            <li>Python & SQL</li>
+                            <li>Machine Learning</li>
+                            <li>NLP Techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h3 class="skill-category">Visualization</h3>
+                        <ul class="list-unstyled skill-list">
+                            <li>Power BI</li>
+                            <li>Tableau</li>
+                            <li>Data Storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4">
+                        <h3 class="skill-category">Core Soft Skills</h3>
+                        <ul class="list-unstyled skill-list">
+                            <li>Analytical Thinking</li>
+                            <li>Problem Solving</li>
+                            <li>Effective Teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <div class="container text-center">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="d-flex flex-wrap justify-content-center">
+                <span class="tool-badge">Google Colab</span>
+                <span class="tool-badge">Jupyter</span>
+                <span class="tool-badge">Power BI</span>
+                <span class="tool-badge">SQL Server</span>
+                <span class="tool-badge">GitHub</span>
+                <span class="tool-badge">Canva</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container text-center">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title text-white">Let's Connect</h2>
+            <p class="mb-5 text-white-50">I'm always open to discussing new projects and opportunities.</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="mailto:ayahshdefat377@gmail.com" class="btn btn-outline-light rounded-pill px-4">
-                    <i class="bi bi-envelope-fill me-2"></i> Email Me
+                <a href="mailto:ayahshdefat377@gmail.com" class="contact-btn">
+                    <i class="bi bi-envelope-fill me-2"></i> ayahshdefat377@gmail.com
                 </a>
-                <a href="https://linkedin.com/in/ayah-shdefat-23ab0128a" target="_blank" class="btn btn-outline-light rounded-pill px-4">
-                    <i class="bi bi-linkedin me-2"></i> LinkedIn
+                <a href="https://linkedin.com/in/ayah-shdefat-23ab0128a" target="_blank" class="contact-btn">
+                    <i class="bi bi-linkedin me-2"></i> LinkedIn Profile
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="mb-0">© 2024 Ayah Shdefat. All Rights Reserved.</p>
+            <p class="mb-0">© 2025 Ayah Shdefat. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
